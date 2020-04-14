@@ -1,0 +1,24 @@
+<form [formGroup]="layoutForm" (ngSubmit)="layout()">
+  <div class="form-group">
+    <button type="submit"
+            class="btn btn-block btn-primary"
+            [disabled]="layoutForm.invalid">
+      LAYOUT
+    </button>
+  </div>
+  <div class="form-group"
+       [ngClass]="{'has-error': layoutForm.get('layoutField').invalid && layoutForm.get('layoutField').touched}">
+    <label for="layout">Enter text in the field</label>
+    <textarea type="text"
+              class="form-control underlined"
+              id="layout"
+              rows="10"
+              autofocus
+              placeholder="Enter text"
+              formControlName="layoutField"></textarea>
+    <span class="form-help-text"
+          *ngIf="layoutForm.get('layoutField').invalid && layoutForm.get('layoutField').touched">
+      <span *ngIf="layoutForm.get('layoutField')['errors']['required']">Text field cannot be empty. </span>
+    </span>
+  </div>
+</form>

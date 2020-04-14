@@ -1,0 +1,10 @@
+<div class="layout" *ngIf="!(authService.isLoggedIn$ | async)">
+  <div class="layout-container">
+    <div class="card">
+      <div class="layout-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet *ngIf="(authService.isLoggedIn$ | async)"></router-outlet>

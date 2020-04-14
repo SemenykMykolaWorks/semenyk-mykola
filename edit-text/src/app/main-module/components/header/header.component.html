@@ -1,0 +1,18 @@
+<aside class="sidebar">
+  <div class="sidebar-container">
+    <nav class="menu">
+      <ul class="nav">
+        <li routerLinkActive="active">
+          <a class="button  first" [routerLink]="['/', 'first-page']"> First </a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="button  second" [routerLink]="['/', 'second-page']"> Second </a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="button  third" [routerLink]="['/', 'third-page']"> Third </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <button class="button logout" (click)="logout()">Return to start page</button>
+</aside>

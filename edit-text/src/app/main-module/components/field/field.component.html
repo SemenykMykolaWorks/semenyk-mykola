@@ -1,0 +1,10 @@
+<div *ngFor="let item of text; let i=index; trackBy:trackByFn">
+  <input class="page-input"
+         type="text"
+         #focus
+         [id]="i"
+         [value]="item"
+         (ngModelChange)="changeText($event, i)"
+         [ngModel]="text[i]">
+  <p class="number-character">Number of characters: {{ item.length }}</p>
+</div>
